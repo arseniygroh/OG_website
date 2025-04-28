@@ -24,7 +24,6 @@ body{
 
 .header {
     background-color: #161A2A;
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 50;
@@ -88,7 +87,6 @@ body{
 
 /* main */
 main{
-    padding-top: 134px;
     min-height: 37.5rem;
 }
 main .main_gradient{
