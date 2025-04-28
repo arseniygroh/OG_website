@@ -126,6 +126,7 @@ main .main_gradient{
 }
 
 .top-footer__title {
+    color: #dcbc78;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.12; /* 18/16 */
