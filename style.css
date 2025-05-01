@@ -120,7 +120,7 @@ main .main_gradient{
     padding: 1rem 0;
     font-weight: bold;
     display: inline-block;
-    margin: 0 2.5rem;
+    margin: 0 17.5%;
 }
 #2015{
     margin-top: 0;
@@ -382,6 +382,36 @@ margin-right: 20%;
     .open-menu .icon-menu::after {
         transform: rotate(-45deg);
         bottom: 50%; 
+    }
+    #history_wrapper{
+        display: block;
+        padding: 0.75rem;
+    }
+    #history_wrapper p{
+        font-size: 1.25rem;
+    }
+    #history_years{
+        display: none;
+    }
+    .history_article1{
+        display: block;
+    }
+    .history_article2 {
+        margin: 0;
+    }
+    .history_article1 img{
+        display: none;
+    }
+    .history_banner{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .year_title{
+        margin-left: 37.5%;
+        text-align: center;
+        
     }
 }
 
