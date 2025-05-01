@@ -148,6 +148,7 @@ main .main_gradient{
 }
 .history_article1 p{
     line-height: 175%;
+    margin-bottom: 1rem;
 }
 .history_article2{
 margin-right: 20%;
@@ -160,6 +161,7 @@ margin-right: 20%;
 }
 .history_article2 p{
     line-height: 175%;
+    margin-bottom: 1rem;
 }
 .history_banner{
     width: 75%;
@@ -167,6 +169,9 @@ margin-right: 20%;
     margin-left: 5%;
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
+}
+.year_selected{
+    background-color: #0c0f1d !important;
 }
 
 /* footer */
