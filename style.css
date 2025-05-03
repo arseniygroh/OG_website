@@ -98,20 +98,26 @@ main .main_gradient{
 
 
 /* history */
+#history_header{
+    display: flex;
+    justify-content: center;
+}
 #history_title{
     color: #fff;
     text-align: center;
-    font-size: 3rem;
-}
-#history_bold{
+    font-size: 3.5rem;
     font-weight: bold;
+    display: inline-block;
+    border-bottom: solid #dcbc78 4px;
+    padding-bottom: 0.75rem;
 }
+
 #history_wrapper{
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 4rem;
     padding: 6rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
     color: #fff;
 }
 #history_years{
@@ -131,8 +137,8 @@ main .main_gradient{
     display: inline-block;
     margin: 0 17.5%;
 }
-#2015{
-    margin-top: 0;
+.year_title_top{
+    margin-top: 0 !important;
 }
 .year_title{
     font-size: 3rem;
