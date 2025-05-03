@@ -98,11 +98,20 @@ main .main_gradient{
 
 
 /* history */
+#history_title{
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+}
+#history_bold{
+    font-weight: bold;
+}
 #history_wrapper{
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 4rem;
     padding: 6rem;
+    padding-top: 2rem;
     color: #fff;
 }
 #history_years{
