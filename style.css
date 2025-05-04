@@ -408,6 +408,14 @@ margin-right: 20%;
     #history_years{
         display: none;
     }
+    #history_title{
+        margin-top: 1rem;
+        font-size: 2rem;
+        line-height: 125%;
+    }
+    .year_title_top{
+        border: 0;
+    }
     .history_article1{
         display: block;
     }
