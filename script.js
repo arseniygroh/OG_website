@@ -29,29 +29,29 @@ if (window.location.href.includes("history_cs")) {
     const years = document.querySelectorAll("#history_years a");
     // console.log(years);
     window.addEventListener("scroll",()=>{
-        // console.log(window.scrollY);
+        console.log(window.scrollY);
         years.forEach(element => {
            element.classList.remove("year_selected") 
         });
-        if (window.scrollY > 5900) {
+        if (window.scrollY > 5650) {
             years[6].classList.add("year_selected");
         }
-        else if (window.scrollY > 5300) {
+        else if (window.scrollY > 4600) {
             years[5].classList.add("year_selected");
         }
-        else if (window.scrollY > 4200) {
+        else if (window.scrollY > 3750) {
             years[4].classList.add("year_selected");
         }
-        else if (window.scrollY > 2750) {
+        else if (window.scrollY > 2800) {
             years[3].classList.add("year_selected");
         }
-        else if (window.scrollY > 1850) {
+        else if (window.scrollY > 1750) {
             years[2].classList.add("year_selected");
         }
-        else if (window.scrollY > 900) {
+        else if (window.scrollY > 850) {
             years[1].classList.add("year_selected");
         }
-        else if (window.scrollY <= 900) {
+        else if (window.scrollY <= 850) {
             years[0].classList.add("year_selected");
         }
     })
