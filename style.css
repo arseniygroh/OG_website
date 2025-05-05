@@ -188,6 +188,23 @@ margin-right: 20%;
 .year_selected{
     background-color: #0c0f1d !important;
 }
+/* about */
+#about_header{
+    display: flex;
+    justify-content: center;
+}
+#about_header h1{
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: solid #dcbc78 4px;
+    padding-bottom: 0.75rem;
+}
+
+
 
 /* footer */
 
