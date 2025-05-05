@@ -203,9 +203,129 @@ margin-right: 20%;
     border-bottom: solid #dcbc78 4px;
     padding-bottom: 0.75rem;
 }
+#about_top_wrap{
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#about_top_wrap img{
+    height: auto;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#about_top_side_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15% 25%;
+    margin-right: 0;
+}
+#about_top_side_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15% 25%;
+    margin-left: 0;
+}
+#about_top_wrap p {
+    font-size: 1.5rem;
+    color: #dcbc78;
+    line-height: 125%;
+    background-color: #00000044;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#about_mid_wrap p{
+    font-size: 1.25rem;
+    color: #fff;
+    line-height: 150%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0 20%;
+}
+#about_mid_inner_wrap{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#about_mid_inner_wrap img{
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+}
+#about_mid_inner_wrap p{
+    margin: 0;
+    margin-top: 10%;
+}
+#achievements_wrap{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+#achievements_wrap img{
+    height: auto;
+    width: 4rem;
+}
+.history_title{
+    display: flex;
+    justify-content: center;
+}
 
-
-
+.history_title h2{
+    color: #fff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: solid #dcbc78 4px;
+    padding-bottom: 0.75rem;
+    margin-top: 4rem;
+}
+.achievements_img{
+    position: relative;
+    transition: ease 300ms;
+}
+.achievements_dropdown{
+    position: absolute;
+    transform: translate(-37.5%, 1rem);
+    background-color: #00000044;
+    margin: 0 !important;
+    padding: 1rem !important;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+    transition: ease 250ms;
+    opacity: 0;
+}
+.achievements_img:hover + .achievements_dropdown{
+    opacity: 1;
+    transition: ease 250ms;
+}
+.achievements_img:hover{
+    transform: translateY(-0.5rem);
+    transition: ease 300ms;
+}
+#doc_wrap{
+    margin: 0 5%;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+#doc_wrap img{
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.25rem;
+    transition: ease 250ms;
+}
+#doc_wrap img:hover{
+    filter: brightness(0.675);
+    transition: ease 250ms;
+}
 /* footer */
 
 .footer {
