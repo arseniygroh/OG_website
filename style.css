@@ -192,6 +192,7 @@ margin-right: 20%;
 #about_header{
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(#161A2A,#20263b);
 }
 #about_header h1{
     text-transform: uppercase;
@@ -200,14 +201,16 @@ margin-right: 20%;
     font-size: 3.5rem;
     font-weight: bold;
     display: inline-block;
-    border-bottom: solid #dcbc78 4px;
-    padding-bottom: 0.75rem;
+    /* border-bottom: solid #dcbc78 4px; */
+    padding-bottom: 1rem;
 }
 #about_top_wrap{
-    margin: 4rem 0;
+    padding: 4rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background-image: url(media/about.png);
 }
+
 #about_top_wrap img{
     height: auto;
     max-width: 75%;
@@ -232,7 +235,7 @@ margin-right: 20%;
     font-size: 1.5rem;
     color: #dcbc78;
     line-height: 125%;
-    background-color: #00000044;
+    background-color: #000000a4;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
