@@ -577,7 +577,56 @@ margin-right: 20%;
         text-align: center;
         
     }
-    
+    #about_header h1{
+        font-size: 2.5rem;
+        padding: 2rem 0;
+    }
+    #achievements_wrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #achievements_wrap img{
+        margin-left: 1rem;
+    }
+    #achievements_wrap img:hover{
+        transform: translateY(0);
+    }
+    #achievements_wrap div{
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .achievements_dropdown{
+        position: static;
+        opacity: 1;
+        transform: translate(0, 0);
+        padding: 1rem 0.5rem !important;
+    }
+    #about_top_wrap{
+        grid-template-columns: 1fr;
+        background-image: url(media/about_mobile.png);
+    }
+    #about_top_wrap img{
+        grid-row: 1 / 2;
+    }
+    #about_top_side_left{
+        margin: 0 2.5%;
+    }
+    #about_top_side_right{
+        margin: 0 2.5%;
+    }
+    #about_top_wrap p{
+        margin-bottom: 2rem;
+    }
+    #about_mid_wrap p{
+        margin: 0 2.5%;
+    }
+    #about_mid_inner_wrap{
+        grid-template-columns: 1fr;
+    }
+    #doc_wrap{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
