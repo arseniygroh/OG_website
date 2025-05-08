@@ -123,9 +123,7 @@ if (window.location.href.includes("about")){
     }
     let idleToggle = window.setInterval(toggleClass,1500);
     imgs.forEach(element => {
-        element.addEventListener("mouseover",()=>{
-            console.log("1111");
-            
+        element.addEventListener("mouseover",()=>{            
             imgs.forEach(element => {
                 element.classList.remove("achievements_img_idle")
             });
