@@ -103,7 +103,9 @@ else if (window.location.href.includes("history")) {
 if (window.location.href.includes("about")){    
     let imgs = document.querySelectorAll(".achievements_img");
     let counter = 0;
-    let idleToggle = window.setInterval(()=>{
+    let timeoutCounter = 0;
+    let timeout;
+    function toggleClass(){
         if (counter == 0) {
             imgs[0].classList.add("achievements_img_idle");
             counter++;
@@ -118,13 +120,23 @@ if (window.location.href.includes("about")){
             imgs[imgs.length - 1].classList.remove("achievements_img_idle");
             imgs[0].classList.add("achievements_img_idle");
         }
-    },1500)
+    }
+    let idleToggle = window.setInterval(toggleClass,1500);
     imgs.forEach(element => {
         element.addEventListener("mouseover",()=>{
+            console.log("1111");
+            
             imgs.forEach(element => {
                 element.classList.remove("achievements_img_idle")
             });
             window.clearInterval(idleToggle);
+            if (timeoutCounter != 0) {
+                window.clearTimeout(timeout);
+            }
+            timeout = window.setTimeout(()=>{
+                idleToggle = window.setInterval(toggleClass,1500);
+            },7500)
+            timeoutCounter++;
         });
     });
 }
