@@ -260,7 +260,7 @@ margin-right: 20%;
 }
 #about_mid_inner_wrap p{
     margin: 0;
-    margin-top: 10%;
+    padding-top: 0.5rem;
 }
 #achievements_wrap{
     margin-top: 2rem;
@@ -311,6 +311,11 @@ margin-right: 20%;
 .achievements_img:hover{
     transform: translateY(-0.5rem);
     transition: ease 300ms;
+}
+.achievements_img_idle{
+    transform: translateY(-0.5rem);
+    transition: ease 300ms;
+
 }
 #doc_wrap{
     margin: 0 5%;

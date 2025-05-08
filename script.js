@@ -99,3 +99,32 @@ else if (window.location.href.includes("history")) {
         }
     })
 }
+
+if (window.location.href.includes("about")){    
+    let imgs = document.querySelectorAll(".achievements_img");
+    let counter = 0;
+    let idleToggle = window.setInterval(()=>{
+        if (counter == 0) {
+            imgs[0].classList.add("achievements_img_idle");
+            counter++;
+        }
+        else if (counter < imgs.length) {
+            imgs[counter - 1].classList.remove("achievements_img_idle");
+            imgs[counter].classList.add("achievements_img_idle");
+            counter++;
+        }
+        else if (counter == imgs.length) {
+            counter = 1;
+            imgs[imgs.length - 1].classList.remove("achievements_img_idle");
+            imgs[0].classList.add("achievements_img_idle");
+        }
+    },1500)
+    imgs.forEach(element => {
+        element.addEventListener("mouseover",()=>{
+            imgs.forEach(element => {
+                element.classList.remove("achievements_img_idle")
+            });
+            window.clearInterval(idleToggle);
+        });
+    });
+}
