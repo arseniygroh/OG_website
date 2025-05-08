@@ -139,7 +139,7 @@ if (window.location.href.includes("about")){
             }
             timeout = window.setTimeout(()=>{
                 idleToggle = window.setInterval(toggleClass,1500);
-            },7500)
+            },2000)
             timeoutCounter++;
         });
     });
