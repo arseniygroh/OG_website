@@ -1184,11 +1184,61 @@ main{
     min-height: 30rem;
 }
 .player-column-left {
-    margin-right: 10rem;
+    margin-right: 7rem;
 }
 .player-description {
     font-weight: 200;
-    line-height: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+.player-description > p {
+    line-height: 1.3em;
+}
+.players-nickname {
+    font-size: 5rem;
+    font-weight: 500;
+}
+.players-name {
+    padding: 20px 0;
+}
+.players-from-role-content {
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #5c5c5c;
+    border-radius: 40px;
+    font-size: 1.125rem;
+    padding: 20px;
+    min-width: 32rem;
+}
+.players-from-wrapper {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+}
+.players-from-bs,
+.players-role-bs {
+    color: rgb(164, 164, 164);
+    font-weight: 350;
+    padding-right: 7px;
+}
+.players-from,
+.players-role {
+    font-weight: 500;
+}
+.players-role-wrapper {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    padding-left: 20px;
+    border-left: 1px solid #5c5c5c;
+}
+.players-bio {
+    padding: 25px 0;
+    color: rgb(164, 164, 164);
+    font-weight: 350;
 }
 .player-column-right {
 }
@@ -1313,6 +1363,9 @@ main{
     .ogroster-team-img {
         max-width: 15rem;
     }
+    .players-nickname {
+        font-size: 3rem;
+    }
 }
 @media screen and (max-width: 767px) {
     .teams-front-item-grid {
@@ -1330,6 +1383,17 @@ main{
     }
     .ogroster-grid {
         margin-right: 2rem;
+    }
+    .players-from-role-content {
+        display: block;
+        min-width: 0rem;
+        height: 6rem;
+        border: 0px solid #5c5c5c;
+        padding: 0px;
+    }
+    .players-role-wrapper {
+        padding-left: 0px;
+        border-left: 0px solid #5c5c5c;
     }
 }
 
