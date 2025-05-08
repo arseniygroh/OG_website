@@ -108,17 +108,22 @@ if (window.location.href.includes("about")){
     function toggleClass(){
         if (counter == 0) {
             imgs[0].classList.add("achievements_img_idle");
+            imgs[0].nextElementSibling.classList.add("achievements_dropdown_idle");
             counter++;
         }
         else if (counter < imgs.length) {
             imgs[counter - 1].classList.remove("achievements_img_idle");
+            imgs[counter -1].nextElementSibling.classList.remove("achievements_dropdown_idle");
             imgs[counter].classList.add("achievements_img_idle");
+            imgs[counter].nextElementSibling.classList.add("achievements_dropdown_idle");
             counter++;
         }
         else if (counter == imgs.length) {
             counter = 1;
             imgs[imgs.length - 1].classList.remove("achievements_img_idle");
+            imgs[imgs.length - 1].nextElementSibling.classList.remove("achievements_dropdown_idle");
             imgs[0].classList.add("achievements_img_idle");
+            imgs[0].nextElementSibling.classList.add("achievements_dropdown_idle");
         }
     }
     let idleToggle = window.setInterval(toggleClass,1500);
@@ -126,6 +131,7 @@ if (window.location.href.includes("about")){
         element.addEventListener("mouseover",()=>{            
             imgs.forEach(element => {
                 element.classList.remove("achievements_img_idle")
+                element.nextElementSibling.classList.remove("achievements_dropdown_idle")
             });
             window.clearInterval(idleToggle);
             if (timeoutCounter != 0) {

@@ -315,7 +315,10 @@ margin-right: 20%;
 .achievements_img_idle{
     transform: translateY(-0.5rem);
     transition: ease 300ms;
-
+}
+.achievements_dropdown_idle{
+    opacity: 1;
+    transition: ease 250ms;
 }
 #doc_wrap{
     margin: 0 5%;
