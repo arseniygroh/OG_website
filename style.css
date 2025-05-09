@@ -1542,7 +1542,156 @@ margin-right: 20%;
 .year_selected{
     background-color: #0c0f1d !important;
 }
+/* about */
+#about_header{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#161A2A,#20263b);
+}
+#about_header h1{
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: inline-block;
+    /* border-bottom: solid #dcbc78 4px; */
+    padding-bottom: 1rem;
+}
+#about_top_wrap{
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: url(media/about.png);
+}
 
+#about_top_wrap img{
+    height: auto;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#about_top_side_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15% 25%;
+    margin-right: 0;
+}
+#about_top_side_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15% 25%;
+    margin-left: 0;
+}
+#about_top_wrap p {
+    font-size: 1.5rem;
+    color: #dcbc78;
+    line-height: 125%;
+    background-color: #000000a4;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#about_mid_wrap p{
+    font-size: 1.25rem;
+    color: #fff;
+    line-height: 150%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0 20%;
+    padding-top: 2rem;
+}
+#about_mid_inner_wrap{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#about_mid_inner_wrap img{
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+}
+#about_mid_inner_wrap p{
+    margin: 0;
+    padding-top: 0.5rem;
+}
+#achievements_wrap{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+#achievements_wrap img{
+    height: auto;
+    width: 4rem;
+}
+.history_title{
+    display: flex;
+    justify-content: center;
+}
+
+.history_title h2{
+    color: #fff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: solid #dcbc78 4px;
+    padding-bottom: 0.75rem;
+    margin-top: 4rem;
+}
+.achievements_img{
+    position: relative;
+    transition: ease 300ms;
+}
+.achievements_dropdown{
+    position: absolute;
+    transform: translate(-37.5%, 1rem);
+    background-color: #00000044;
+    margin: 0 !important;
+    padding: 1rem !important;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+    transition: ease 250ms;
+    opacity: 0;
+}
+.achievements_img:hover + .achievements_dropdown{
+    opacity: 1;
+    transition: ease 250ms;
+}
+.achievements_img:hover{
+    transform: translateY(-0.5rem);
+    transition: ease 300ms;
+}
+.achievements_img_idle{
+    transform: translateY(-0.5rem);
+    transition: ease 300ms;
+}
+.achievements_dropdown_idle{
+    opacity: 1;
+    transition: ease 250ms;
+}
+#doc_wrap{
+    margin: 0 5%;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+#doc_wrap img{
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.25rem;
+    transition: ease 250ms;
+}
+#doc_wrap img:hover{
+    filter: brightness(0.675);
+    transition: ease 250ms;
+}
 /* footer */
 
 .footer {
@@ -1789,6 +1938,56 @@ margin-right: 20%;
         margin-left: 37.5%;
         text-align: center;
         
+    }
+    #about_header h1{
+        font-size: 2.5rem;
+        padding: 2rem 0;
+    }
+    #achievements_wrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #achievements_wrap img{
+        margin-left: 1rem;
+    }
+    #achievements_wrap img:hover{
+        transform: translateY(0);
+    }
+    #achievements_wrap div{
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .achievements_dropdown{
+        position: static;
+        opacity: 1;
+        transform: translate(0, 0);
+        padding: 1rem 0.5rem !important;
+    }
+    #about_top_wrap{
+        grid-template-columns: 1fr;
+        background-image: url(media/about_mobile.png);
+    }
+    #about_top_wrap img{
+        grid-row: 1 / 2;
+    }
+    #about_top_side_left{
+        margin: 0 2.5%;
+    }
+    #about_top_side_right{
+        margin: 0 2.5%;
+    }
+    #about_top_wrap p{
+        margin-bottom: 2rem;
+    }
+    #about_mid_wrap p{
+        margin: 0 2.5%;
+    }
+    #about_mid_inner_wrap{
+        grid-template-columns: 1fr;
+    }
+    #doc_wrap{
+        grid-template-columns: 1fr;
     }
 }
 
