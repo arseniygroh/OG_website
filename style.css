@@ -1161,9 +1161,10 @@ main{
 }
 .ogroster-player-block {
     cursor: pointer;
-    filter: grayscale(1)
+    filter: grayscale(1);
 }
 .active_pr-show {
+    transition: filter 0.3s;
     filter: grayscale(0)
 }
 .player-item-content {
