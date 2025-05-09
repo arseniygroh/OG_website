@@ -1,9 +1,11 @@
 const menuBtn = document.querySelector(".icon-menu");
 const accordionBtns = document.querySelectorAll(".top-footer__title");
 const listsToShow = document.querySelectorAll(".list-top-footer");
+const header = document.getElementById("header");
 
 menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
+    header.classList.toggle("fixed-header")
 })
 
 for (let i = 0; i < accordionBtns.length; i++) {
@@ -99,23 +101,25 @@ if (window.location.href.includes("teams") || window.location.href.includes("ind
         });
     }
 
-
-
-    const players_pr = document.querySelectorAll(".ogroster-player-block");
-    const players = document.querySelectorAll(".ogroster-player-content");
-
-    players_pr[0].classList.add("active_pr-show")
-    players[0].classList.add("active_player-show")
-
-    players_pr.forEach((prElement, index) => {
-        prElement.addEventListener('click', () => {
-            players_pr.forEach(el => el.classList.remove("active_pr-show"));
-            players.forEach(el => el.classList.remove("active_player-show"));
-
-            prElement.classList.add("active_pr-show");
-            players[index].classList.add("active_player-show");
+    if (window.location.href.includes("teams")) {
+        const players_pr = document.querySelectorAll(".ogroster-player-block");
+        const players = document.querySelectorAll(".ogroster-player-content");
+    
+        players_pr[0].classList.add("active_pr-show")
+        players[0].classList.add("active_player-show")
+    
+        players_pr.forEach((prElement, index) => {
+            prElement.addEventListener('click', () => {
+                players_pr.forEach(el => el.classList.remove("active_pr-show"));
+                players.forEach(el => el.classList.remove("active_player-show"));
+    
+                prElement.classList.add("active_pr-show");
+                players[index].classList.add("active_player-show");
+            });
         });
-    });
+    }
+
+    
 }
 
 if (window.location.href.includes("history_cs")) {

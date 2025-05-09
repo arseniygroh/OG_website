@@ -65,7 +65,16 @@ img, a {
 .list-navbar-header {
     display: flex;
     align-items: center;
-    column-gap: 18px;
+    justify-content: space-between;
+}
+
+.header__navbar {
+    min-width: 20rem;
+}
+
+.list-navbar-header__item {
+    position: relative;
+    padding: 0 10px;
 }
 
 .list-navbar-header__link {
@@ -74,6 +83,38 @@ img, a {
     font-size: 18px;
     font-weight: 700;
     position: relative;
+    cursor: pointer;
+}
+
+.header__bottom-list {
+    display: none;
+}
+
+.list-navbar-header__item:hover .header__bottom-list{
+    position: absolute;
+    width: 180px;
+    padding: 20px 0;
+    left: -15px;
+    top: 100%;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    font-size: 16px;
+    background: #161A2A;
+}
+
+.header__bottom-list-item {
+}
+.header__bottom-list-item:hover {
+    transition: 0.2s;
+    background-color: #0D0F1D;
+}
+.header__bottom-list-link {
+    padding: 25px;
+    width: 100%;
 }
 
 .list-navbar-header__link::before {
@@ -201,7 +242,7 @@ main{
     line-height: 1.2em;
 }
 .text-small {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.7em;
 }
@@ -325,7 +366,7 @@ main{
 .quote-space {
 }
 .quote-wrapper>p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-top: 10px;
 }
 .quote-wrapper> p > a {
@@ -334,7 +375,7 @@ main{
 }
 .text-style-quote {
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5em;
 }
 .story-image-wrapper {
@@ -954,7 +995,7 @@ main{
     background-color: #000000;
 }
 .front-item-text {
-    font-size: 0.80rem;
+    font-size: 0.85rem;
     font-weight: 200;
     line-height: 1.5em;
 }
@@ -1316,7 +1357,7 @@ main{
     .front-mini-description {
         display: block;
         color: rgb(214, 214, 214);
-        font-size: 0.80rem;
+        font-size: 1rem;
         font-weight: 200;
         line-height: 1.5em;
         grid-column: 1/3
@@ -1816,6 +1857,10 @@ margin-right: 20%;
         transition: left 0.3s;
     }
 
+    .fixed-header {
+        position: fixed;
+    }
+
     .navbar-header::before {
         content: "";
         position: fixed;
@@ -1988,6 +2033,27 @@ margin-right: 20%;
     }
     #doc_wrap{
         grid-template-columns: 1fr;
+    }
+
+
+    .list-navbar-header__item {
+        text-align: right;
+        padding: 10px 0;
+    }
+    
+    .list-navbar-header__item:hover .header__bottom-list{
+        position: relative;
+        width: 200px;
+        padding: 10px 0;
+        left: 20px;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        font-size: 18px;
+        background: #161A2A;
     }
 }
 
