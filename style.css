@@ -16,6 +16,11 @@ html {
     font-size: 1.125rem;
 }
 
+img, a {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 .wrapper main {
     flex: 1 1 auto;
 }
@@ -1032,13 +1037,13 @@ main{
 .front-partners-logos-slider[data-animated="true"] .front-partners-slider-track {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 10s)
+    animation: scroll var(--_animation-duration, 50s)
     var(--_animation-direction, forwards) linear infinite;
 }
 
 @keyframes scroll {
     to {
-        transform: translate(calc(-20% - 0.5rem));
+        transform: translate(calc(-50% - 0.5rem));
     }
 }
 

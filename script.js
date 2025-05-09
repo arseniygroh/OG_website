@@ -106,13 +106,12 @@ const players = document.querySelectorAll(".ogroster-player-content");
 players_pr[0].classList.add("active_pr-show")
 players[0].classList.add("active_player-show")
 
-for (let i = 0; i < players_pr.length; i++) {
-    players_pr[i].addEventListener('click', (e) => {
-        for (let i = 0; i < players_pr.length; i++) {
-            players_pr[i].classList.remove("active_pr-show")
-            players[i].classList.remove("active_player-show")
-        }
-        players_pr[i].classList.add("active_pr-show")
-        players[i].classList.add("active_player-show")
-    })
-}
+players_pr.forEach((prElement, index) => {
+    prElement.addEventListener('click', () => {
+        players_pr.forEach(el => el.classList.remove("active_pr-show"));
+        players.forEach(el => el.classList.remove("active_player-show"));
+
+        prElement.classList.add("active_pr-show");
+        players[index].classList.add("active_player-show");
+    });
+});
