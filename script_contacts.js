@@ -5,18 +5,52 @@ const inputs = document.querySelectorAll("input");
 const textArea = document.querySelector("textarea");
 const submitBtn = document.querySelector(".bottom-body-form__btn");
 const header = document.getElementById("header");
+const main = document.querySelector("main");
+const body = document.querySelector("body");
+
+const mediaQuery = window.matchMedia('(min-width: 767.98px)');
+
+window.addEventListener("load", () => {
+	document.body.classList.remove("preload");
+});
+
+function handleWidthChange(e) {
+    if (e.matches) {
+        main.style.paddingTop = "0px";
+    }
+}
+
+handleWidthChange(mediaQuery);
+
+mediaQuery.addEventListener('change', handleWidthChange);
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  document.body.classList.add('no-transition');
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove('no-transition');
+  }, 300);
+});
 
 menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
     header.classList.toggle("fixed-header")
+    if (header.classList.contains("fixed-header")) {
+        main.style.paddingTop = "136px";
+    } else {
+        main.style.paddingTop = "0px";
+    }
 })
 
 const drpBtn = document.querySelectorAll(".list-navbar-header__link");
 
 for (let i = 0; i < drpBtn.length; i++) {
     if (drpBtn[i].nextElementSibling && drpBtn[i].nextElementSibling.classList.contains("header__bottom-list")) {
+        drpBtn[i].classList.add('drop-arrow');
         drpBtn[i].addEventListener('click', () => {
             drpBtn[i].nextElementSibling.classList.toggle("drop_appear");
+            drpBtn[i].classList.toggle("arrow-active");
         })
     }
 }

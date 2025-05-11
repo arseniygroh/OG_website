@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("reset.css");
 
+.preload * {
+    transition: none !important;
+    animation-duration: 0.001s !important;
+}
+
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -95,6 +106,7 @@ body{
         flex-direction: column;
         font-size: 16px;
         background: #161A2A;
+        transition: 0.3s;
     }
     
     .list-navbar-header__item:hover .header__bottom-list{
@@ -102,11 +114,11 @@ body{
         position: absolute;
         opacity: 1;
         visibility: visible;
-        transition: 0.3s;
     }
 }
 
 .header__bottom-list-item {
+    transition: 0.2s;
 }
 .header__bottom-list-item:hover {
     transition: 0.2s;
@@ -117,7 +129,7 @@ body{
     width: 100%;
 }
 
-.list-navbar-header__link::before {
+.list-navbar-header__link::after {
     content: '';
     background-color: #fff;
     display: block;
@@ -129,7 +141,7 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-.list-navbar-header__link:hover.list-navbar-header__link::before {
+.list-navbar-header__link:hover.list-navbar-header__link::after {
     width: 100%;
 }
 
@@ -487,7 +499,7 @@ body{
         content: "";
         position: fixed;
         z-index: 10;
-        height: 128px;
+        height: 136px;
         width: 100%;
         top: 0;
         left: 0;
@@ -620,9 +632,30 @@ body{
         width: 100%;
     }
 
+    .drop-arrow::before {
+        content: '';
+        display: block;
+        background-image: url(./media/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 12px;
+        height: 100%;
+        position: absolute;
+        top: 28%;
+        left: -21px;
+        z-index: 100;
+        transition: 0.3s;
+    }
+
     .drop_appear {
         position: relative;
         display: flex;
+    }
+
+    .drop-arrow.arrow-active::before {
+        transform: rotate(90deg);
+        top: 0;
+        left: -29.6px;
     }
 }
 
