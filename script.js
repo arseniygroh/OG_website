@@ -1,9 +1,11 @@
 const menuBtn = document.querySelector(".icon-menu");
 const accordionBtns = document.querySelectorAll(".top-footer__title");
 const listsToShow = document.querySelectorAll(".list-top-footer");
+const header = document.getElementById("header");
 
 menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
+    header.classList.toggle("fixed-header")
 })
 
 const drpBtn = document.querySelectorAll(".list-navbar-header__link");

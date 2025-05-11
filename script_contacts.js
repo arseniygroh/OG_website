@@ -4,8 +4,11 @@ const listsToShow = document.querySelectorAll(".list-top-footer");
 const inputs = document.querySelectorAll("input");
 const textArea = document.querySelector("textarea");
 const submitBtn = document.querySelector(".bottom-body-form__btn");
+const header = document.getElementById("header");
+
 menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
+    header.classList.toggle("fixed-header")
 })
 
 const drpBtn = document.querySelectorAll(".list-navbar-header__link");
