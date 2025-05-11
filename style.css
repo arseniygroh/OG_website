@@ -91,28 +91,30 @@ img, a {
     cursor: pointer;
 }
 
-.header__bottom-list {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    width: 180px;
-    padding-top: 20px;
-    left: -15px;
-    top: 100%;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    flex-direction: column;
-    font-size: 16px;
-    background: #161A2A;
-}
-
-.list-navbar-header__item:hover .header__bottom-list{
-    display: flex;
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
-    transition: 0.3s;
+@media screen and (min-width: 767.98px) {
+    .header__bottom-list {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 180px;
+        padding-top: 20px;
+        left: -15px;
+        top: 100%;
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+        flex-direction: column;
+        font-size: 16px;
+        background: #161A2A;
+    }
+    
+    .list-navbar-header__item:hover .header__bottom-list{
+        display: flex;
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+    }
 }
 
 .header__bottom-list-item {
@@ -1866,10 +1868,6 @@ margin-right: 20%;
         transition: left 0.3s;
     }
 
-    .fixed-header {
-        position: fixed;
-    }
-
     .navbar-header::before {
         content: "";
         position: fixed;
@@ -1955,6 +1953,10 @@ margin-right: 20%;
         transform: rotate(-45deg);
         bottom: 50%; 
     }
+    .open-menu body {
+        overflow: hidden;
+    }
+
     #history_wrapper{
         display: block;
         padding: 0.75rem;
@@ -2060,21 +2062,22 @@ margin-right: 20%;
     }
 
     .header__bottom-list {
+        display: none;
         width: 200px;
         padding-top: 20px;
         left: 20px;
         color: white;
         font-weight: 600;
         text-transform: uppercase;
-        display: flex;
         flex-direction: column;
         font-size: 18px;
         background: #161A2A;
         width: 100%;
     }
-    
-    .list-navbar-header__item:hover .header__bottom-list{
+
+    .drop_appear {
         position: relative;
+        display: flex;
     }
 }
 

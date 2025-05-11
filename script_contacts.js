@@ -8,6 +8,16 @@ menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
 })
 
+const drpBtn = document.querySelectorAll(".list-navbar-header__link");
+
+for (let i = 0; i < drpBtn.length; i++) {
+    if (drpBtn[i].nextElementSibling && drpBtn[i].nextElementSibling.classList.contains("header__bottom-list")) {
+        drpBtn[i].addEventListener('click', () => {
+            drpBtn[i].nextElementSibling.classList.toggle("drop_appear");
+        })
+    }
+}
+
 for (let i = 0; i < accordionBtns.length; i++) {
     accordionBtns[i].addEventListener("click", (e) => {
         accordionBtns.forEach((btn) => {
