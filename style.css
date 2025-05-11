@@ -266,7 +266,7 @@ main{
     line-height: 1.2em;
 }
 .text-small {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
     line-height: 1.7em;
 }
@@ -399,7 +399,7 @@ main{
 }
 .text-style-quote {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.5em;
 }
 .story-image-wrapper {
