@@ -1,10 +1,57 @@
 const menuBtn = document.querySelector(".icon-menu");
 const accordionBtns = document.querySelectorAll(".top-footer__title");
 const listsToShow = document.querySelectorAll(".list-top-footer");
+const header = document.getElementById("header");
+const main = document.querySelector("main");
+const body = document.querySelector("body");
+
+const mediaQuery = window.matchMedia('(min-width: 767.98px)');
+
+window.addEventListener("load", () => {
+	document.body.classList.remove("preload");
+});
+
+function handleWidthChange(e) {
+    if (e.matches) {
+        main.style.paddingTop = "0px";
+    }
+}
+
+handleWidthChange(mediaQuery);
+
+mediaQuery.addEventListener('change', handleWidthChange);
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  document.body.classList.add('no-transition');
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove('no-transition');
+  }, 300);
+});
+
 
 menuBtn.addEventListener("click", () => {
     document.documentElement.classList.toggle("open-menu");
+    header.classList.toggle("fixed-header")
+    if (header.classList.contains("fixed-header")) {
+        main.style.paddingTop = "136px";
+    } else {
+        main.style.paddingTop = "0px";
+    }
 })
+
+const drpBtn = document.querySelectorAll(".list-navbar-header__link");
+
+for (let i = 0; i < drpBtn.length; i++) {
+    if (drpBtn[i].nextElementSibling && drpBtn[i].nextElementSibling.classList.contains("header__bottom-list")) {
+        drpBtn[i].classList.add('drop-arrow');
+        drpBtn[i].addEventListener('click', () => {
+            drpBtn[i].nextElementSibling.classList.toggle("drop_appear");
+            drpBtn[i].classList.toggle("arrow-active");
+        })
+    }
+}
 
 for (let i = 0; i < accordionBtns.length; i++) {
     accordionBtns[i].addEventListener("click", (e) => {
@@ -99,23 +146,25 @@ if (window.location.href.includes("teams") || window.location.href.includes("ind
         });
     }
 
-
-
-    const players_pr = document.querySelectorAll(".ogroster-player-block");
-    const players = document.querySelectorAll(".ogroster-player-content");
-
-    players_pr[0].classList.add("active_pr-show")
-    players[0].classList.add("active_player-show")
-
-    players_pr.forEach((prElement, index) => {
-        prElement.addEventListener('click', () => {
-            players_pr.forEach(el => el.classList.remove("active_pr-show"));
-            players.forEach(el => el.classList.remove("active_player-show"));
-
-            prElement.classList.add("active_pr-show");
-            players[index].classList.add("active_player-show");
+    if (window.location.href.includes("teams")) {
+        const players_pr = document.querySelectorAll(".ogroster-player-block");
+        const players = document.querySelectorAll(".ogroster-player-content");
+    
+        players_pr[0].classList.add("active_pr-show")
+        players[0].classList.add("active_player-show")
+    
+        players_pr.forEach((prElement, index) => {
+            prElement.addEventListener('click', () => {
+                players_pr.forEach(el => el.classList.remove("active_pr-show"));
+                players.forEach(el => el.classList.remove("active_player-show"));
+    
+                prElement.classList.add("active_pr-show");
+                players[index].classList.add("active_player-show");
+            });
         });
-    });
+    }
+
+    
 }
 
 if (window.location.href.includes("history_cs")) {
