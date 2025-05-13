@@ -1345,7 +1345,6 @@ main{
     object-fit: cover;
 }
 
-
 @media screen and (max-width: 1920px) {
     html {
         font-size: calc(0.625rem + 0.4166666666666667vw);
@@ -2164,9 +2163,13 @@ margin-right: 20%;
 .developers__title {
     font-size: 36px;
     letter-spacing: 0.4px;
+    display: inline;
+    line-height: 125%;
 }
-
-
+.developers_wrap{
+    display: flex;
+    justify-content: space-between;
+}
 .developers__text p {
     line-height: 1.5;
 }
