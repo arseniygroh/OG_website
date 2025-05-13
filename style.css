@@ -1871,7 +1871,6 @@ margin-right: 20%;
 
 .list-bottom-footer__link img {
     transition: transform 0.4s;
-    aspect-ratio: 1 / 1;
     max-width: 100%;
 }
 
