@@ -77,9 +77,10 @@ if (window.location.href.includes("teams") || window.location.href.includes("ind
     document.addEventListener("DOMContentLoaded", function () {
         const carousel = document.querySelector(".carousel");
         const arrowBtns = document.querySelectorAll(".carousel-action-button");
+        if (!carousel) return;
 
         const firstCard = carousel.querySelector(".card");
-        const firstCardWidth = firstCard.offsetWidth;
+        if (!firstCard) return;
 
         let isDragging = false,
             startX,
@@ -88,22 +89,15 @@ if (window.location.href.includes("teams") || window.location.href.includes("ind
         const dragStart = (e) => {
             isDragging = true;
             carousel.classList.add("dragging");
-            startX = e.pageX;
+            startX = e.pageX || e.touches[0].pageX;
             startScrollLeft = carousel.scrollLeft;
         };
 
         const dragging = (e) => {
             if (!isDragging) return;
-
-            const newScrollLeft = startScrollLeft - (e.pageX - startX);
-
-            if (newScrollLeft <= 0 || newScrollLeft >=
-                carousel.scrollWidth - carousel.offsetWidth) {
-                isDragging = false;
-                return;
-            }
-
-            carousel.scrollLeft = newScrollLeft;
+            
+            const currentX = e.pageX || e.touches[0].pageX;
+            carousel.scrollLeft = startScrollLeft - (currentX - startX);
         };
 
         const dragStop = () => {
@@ -111,14 +105,27 @@ if (window.location.href.includes("teams") || window.location.href.includes("ind
             carousel.classList.remove("dragging");
         };
 
+        // Mouse Events
         carousel.addEventListener("mousedown", dragStart);
         carousel.addEventListener("mousemove", dragging);
         document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("mouseleave", dragStop); 
 
+        // Touch Events (For Mobile/Tablets)
+        carousel.addEventListener("touchstart", dragStart, { passive: true });
+        carousel.addEventListener("touchmove", dragging, { passive: true });
+        document.addEventListener("touchend", dragStop);
         arrowBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                carousel.scrollLeft += btn.id === "left" ?
-                    -firstCardWidth : firstCardWidth;
+                const cardWidth = firstCard.offsetWidth;
+                const carouselStyle = window.getComputedStyle(carousel);
+                const gap = parseInt(carouselStyle.gap) || 0;
+                
+                const scrollAmount = cardWidth + gap;
+                carousel.scrollBy({
+                    left: btn.id === "left" ? -scrollAmount : scrollAmount,
+                    behavior: "smooth"
+                });
             });
         });
     });
